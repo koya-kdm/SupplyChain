@@ -40,6 +40,7 @@ contract supplyChain {
     // productTrack[p_id] => registrations
     mapping(uint32 => uint32[])     public productTrack;  // Registrations by Product ID (p_id) / Movement track for a product
 
+    // イベント
     event Transfer(uint32 productId);
 
     // -------------------------------------------------------------------------
@@ -216,7 +217,7 @@ contract supplyChain {
                                      string _uname,
                                      string _pass,
                                      string _utype)
-                                     public view 
+                                     public view
                                      returns (bool)
     {
         if(keccak256(abi.encodePacked(participants[_uid].participantType)) == keccak256(abi.encodePacked(_utype))) {
